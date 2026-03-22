@@ -1,4 +1,4 @@
-import { colorGenerator, consumeWithTimeout } from '../lab1/index.js';
+import { colorGenerator, consumeWithTimeout } from 'lab1';
 
 const colors = colorGenerator();
 

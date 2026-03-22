@@ -1,0 +1,19 @@
+{
+  "name": "lab2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "lab1": "file:../lab1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Ivan",
+    "email": "vanyadzygman@gmail.com"
+  },
+  "license": "MIT",
+  "type": "module"
+}
