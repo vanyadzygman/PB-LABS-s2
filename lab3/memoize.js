@@ -5,17 +5,16 @@ export function memoize(fn, options = {}) {
 
   return function(...args) {
     const key = JSON.stringify(args);
-
     if (cache.has(key)) {
-      return cache.get(key);
+      const entry = cache.get(key);
+      entry.freq++;
+      return entry.value;
     }
-
     if (cache.size >= maxSize && evict) {
       evict(cache);
     }
-
     const result = fn(...args);
-        cache.set(key, result);
+    cache.set(key, { value: result, freq: 1 });
     return result;
   };
-}
+}     
