@@ -1,0 +1,19 @@
+{
+  "name": "lab3-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+  "lab3": "file:../lab3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Ivan",
+    "email": "vanyadzygman@gmail.com"
+  },
+  "license": "MIT",
+  "type": "module"
+}
