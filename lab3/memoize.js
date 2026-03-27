@@ -14,7 +14,7 @@ export function memoize(fn, options = {}) {
       evict(cache);
     }
     const result = fn(...args);
-    cache.set(key, { value: result, freq: 1 });
+    cache.set(key, { value: result, freq: 1, createdAt: Date.now() });
     return result;
   };
 }     
