@@ -1,4 +1,6 @@
-export function memoize(fn) {
+export function memoize(fn, options = {}) {
+  const maxSize = options.maxSize ?? Infinity;
+  const evict = options.evict ?? null;
   const cache = new Map();
 
   return function(...args) {
@@ -8,9 +10,12 @@ export function memoize(fn) {
       return cache.get(key);
     }
 
-    const result = fn(...args);
-    cache.set(key, result);
+    if (cache.size >= maxSize && evict) {
+      evict(cache);
+    }
 
+    const result = fn(...args);
+        cache.set(key, result);
     return result;
   };
 }
