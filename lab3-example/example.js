@@ -30,3 +30,13 @@ setTimeout(() => {
 setTimeout(() => {
     console.log(memoTTL(1, 2));
 }, 200);
+
+console.log('Custom eviction');
+function myEvict(cache) {
+    const lastKey = [...cache.keys()].at(-1);
+    cache.delete(lastKey);
+}
+const memoCustom = memoize(add, { maxSize: 2, evict: myEvict });
+console.log(memoCustom(1, 2));
+console.log(memoCustom(3, 4));
+console.log(memoCustom(5, 6));
