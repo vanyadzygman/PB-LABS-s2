@@ -17,4 +17,13 @@ export class PriorityQueue {
         return this.items.reduce((best, el) =>
             compare[mode](el, best) ? el : best);
     }
+    peek(mode) {
+        return this.items.length ? this.#find(mode).item : null;
+    }
+    dequeue(mode) {
+        if (!this.items.length) return null;
+        const el = this.#find(mode);
+        this.items.splice(this.items.indexOf(el), 1);
+        return el.item;
+    }
 }
