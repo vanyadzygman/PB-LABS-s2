@@ -4,18 +4,18 @@ export class PriorityQueue {
     }
 
     enqueue(item, priority) {
-        this.items.push({ item, priority, order: this.items.length });
+        this.items.push({ item, priority });
     }
 
     #find(mode) {
+        if (mode === 'newest') return this.items[this.items.length - 1];
+        if (mode === 'oldest') return this.items[0];
         const compare = {
             highest: (a, b) => a.priority > b.priority,
             lowest:  (a, b) => a.priority < b.priority,
-            newest:  (a, b) => a.order > b.order,
-            oldest:  (a, b) => a.order < b.order,
         };
-        return this.items.reduce((best, el) =>
-            compare[mode](el, best) ? el : best);
+    return this.items.reduce((best, el) =>
+        compare[mode](el, best) ? el : best);
     }
     peek(mode) {
         return this.items.length ? this.#find(mode).item : null;
