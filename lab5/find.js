@@ -7,3 +7,14 @@ export function findCallback(arr, predicate, callback) {
   }
   callback(null, undefined);
 }
+
+export function findPromise(arr, predicate) {
+    return new Promise((resolve, reject) => {
+        const promises = arr.map(el => predicate(el));
+        Promise.all(promises).then(results => {
+            const index = results.findIndex(r => r);
+            resolve(index !== -1 ? arr[index] : undefined);
+        }).
+        catch(reject);
+    });
+}
