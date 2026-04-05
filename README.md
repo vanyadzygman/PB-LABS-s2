@@ -26,7 +26,14 @@ This project implements a memoization function with configurable cache eviction 
 - **LFU**: removes the least frequently used cache entry when the cache is full;
 - **TTL**: expires cache entries after a configurable time limit;
 - **Custom Policy**: allows users to pass their own eviction function.
-  
+
+### Lab №4: Bi-Directional Priority Queue
+Implements a priority queue with configurable retrieval by priority or insertion order.
+
+#### Operations:
+- **enqueue(item, priority)**: insert an element;
+- **peek/dequeue(highest, lowest, oldest, newest)**: retrieve or remove an element.
+
 ## Program installation:
 ```bash
 git clone https://github.com/vanyadzygman/PB-LABS-s2.git
@@ -38,7 +45,10 @@ node -v
 ```
 Launch
 ```bash
-node main.js
+node lab1/main.js
+node lab2/main.js
+node lab3-example/example.js
+node lab4/index.js
 ```
 
 ## Author
