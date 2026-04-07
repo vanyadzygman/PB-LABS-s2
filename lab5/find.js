@@ -1,11 +1,23 @@
 export function findCallback(arr, predicate, callback) {
-    for (let i = 0; i < arr.length; i++) {
-        predicate(arr[i], (err, result) => {
+    let found = false;
+    let i = 0;
+
+    function next() {
+        if (i >= arr.length) {
+            if (!found) callback(null, undefined);
+            return;    
+        }
+        const current = arr[i++];
+        predicate(current, (err, result) => {
             if (err) return callback(err, null);
-            if (result) return callback(null, arr[i]);
+            if (result && !found) {
+                found = true;
+                return callback(null, current);
+            }
+            next();
         });
-  }
-  callback(null, undefined);
+    }
+    next();
 }
 
 export function findPromise(arr, predicate) {
