@@ -34,6 +34,13 @@ Implements a priority queue with configurable retrieval by priority or insertion
 - **enqueue(item, priority)**: insert an element;
 - **peek/dequeue(highest, lowest, oldest, newest)**: retrieve or remove an element.
 
+### Lab №5: Async Array Functions
+Implements asynchronous versions of the standard `find` array function.
+
+#### Functionality:
+- **findCallback**: callback-based asynchronous version;
+- **findPromise**: promise-based version with async/await support.
+
 ## Program installation:
 ```bash
 git clone https://github.com/vanyadzygman/PB-LABS-s2.git
@@ -49,6 +56,7 @@ node lab1/main.js
 node lab2/main.js
 node lab3-example/example.js
 node lab4/index.js
+node lab5/index.js
 ```
 
 ## Author
