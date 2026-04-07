@@ -1,8 +1,9 @@
-export function findCallback(arr, predicate, callback) {
+export function findCallback(arr, predicate, callback, signal) {
     let found = false;
     let i = 0;
 
     function next() {
+        if (signal?.aborted) return callback(new Error('aborted'), null);
         if (i >= arr.length) {
             if (!found) callback(null, undefined);
             return;    
@@ -20,8 +21,9 @@ export function findCallback(arr, predicate, callback) {
     next();
 }
 
-export function findPromise(arr, predicate) {
+export function findPromise(arr, predicate, signal) {
     return new Promise((resolve, reject) => {
+        signal?.addEventListener('abort', () => reject(new Error('aborted')));
         const promises = arr.map(el => predicate(el));
         Promise.all(promises).then(results => {
             const index = results.findIndex(r => r);

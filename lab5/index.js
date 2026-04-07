@@ -14,4 +14,10 @@ async function main() {
     console.log('async/await result:', result);
 }
 
+const controller = new AbortController();
+controller.abort();
+findCallback(numbers, (el, cb) => cb(null, el > 6), (err, result) => {
+    console.log('abortable result:', err?.message ?? result);
+}, controller.signal);
+
 main();
