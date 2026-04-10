@@ -41,6 +41,13 @@ Implements asynchronous versions of the standard `find` array function.
 - **findCallback**: callback-based asynchronous version;
 - **findPromise**: promise-based version with async/await support.
 
+### Lab №6: Large Data Processing with Streams
+Implements memory-efficient processing of large datasets using Node.js Readable streams.
+
+#### Details:
+- **createLargeDataStream**: generates a large data stream without loading it into memory;
+- processes 1 000 000 items incrementally and calculates the average value.
+
 ## Program installation:
 ```bash
 git clone https://github.com/vanyadzygman/PB-LABS-s2.git
