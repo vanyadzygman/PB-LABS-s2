@@ -12,4 +12,8 @@ export class EventEmitter {
         if (!this.listeners[event]) return;
         this.listeners[event] = this.listeners[event].filter(l => l !== listener);
     }
+    emit(event, data) {
+        if (!this.listeners[event]) return;
+        this.listeners[event].forEach(l => l(data));
+    }
 }
