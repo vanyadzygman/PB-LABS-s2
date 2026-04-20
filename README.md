@@ -48,6 +48,14 @@ Implements memory-efficient processing of large datasets using Node.js Readable 
 - **createLargeDataStream**: generates a large data stream without loading it into memory;
 - processes 1 000 000 items incrementally and calculates the average value.
 
+### Lab №7: Reactive Communication with EventEmitter
+Implements reactive message-based communication between entities using a custom EventEmitter.
+
+#### Features:
+- **on(event, listener)**: subscribe to an event;
+- **off(event, listener)**: unsubscribe from an event;
+- **emit(event, data)**: emit an event to all listeners.
+
 ## Program installation:
 ```bash
 git clone https://github.com/vanyadzygman/PB-LABS-s2.git
@@ -64,6 +72,8 @@ node lab2/main.js
 node lab3-example/example.js
 node lab4/index.js
 node lab5/index.js
+node lab6/index.js
+node lab7/index.js
 ```
 
 ## Author
