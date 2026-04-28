@@ -56,6 +56,16 @@ Implements reactive message-based communication between entities using a custom 
 - **off(event, listener)**: unsubscribe from an event;
 - **emit(event, data)**: emit an event to all listeners.
 
+### Lab №8: Authentication Proxy for API Service
+Implements an authentication proxy that injects credentials into HTTP requests.
+
+#### Functionality:
+- **apiKeyAuth**: injects API key into request headers;
+- **jwtAuth**: injects JWT token into request headers;
+- **oauthAuth**: injects OAuth token into request headers;
+- **setAuth**: dynamically switch between authentication strategies;
+- logs all requests with timestamps.
+
 ## Program installation:
 ```bash
 git clone https://github.com/vanyadzygman/PB-LABS-s2.git
@@ -74,6 +84,7 @@ node lab4/index.js
 node lab5/index.js
 node lab6/index.js
 node lab7/index.js
+node lab8/index.js
 ```
 
 ## Author
