@@ -66,6 +66,14 @@ Implements an authentication proxy that injects credentials into HTTP requests.
 - **setAuth**: dynamically switch between authentication strategies;
 - logs all requests with timestamps.
 
+### Lab №9: Logging Decorator with Configurable Log Levels
+Implements a decorator-based logging system that wraps any function and logs its input, output, and execution time.
+
+#### Features:
+- **log({ level })**: wraps a function with logging at INFO, DEBUG or ERROR level;
+- **formatter**: supports custom log formatters including JSON output;
+- logs timestamp, arguments, result and execution duration.
+
 ## Program installation:
 ```bash
 git clone https://github.com/vanyadzygman/PB-LABS-s2.git
@@ -85,6 +93,7 @@ node lab5/index.js
 node lab6/index.js
 node lab7/index.js
 node lab8/index.js
+node lab9/index.js
 ```
 
 ## Author
